@@ -1,0 +1,17 @@
+baseURL = "/"
+languageCode = "en-us"
+DefaultContentLanguage = "en"
+publishDir = "docs"
+
+title = "Metricio - Dashboards for teams built with React and Node"
+theme = "docdock"
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[[menu.shortcuts]]
+pre = "<h3>More</h3>"
+name = "<i class='fa fa-github'></i>&nbsp;&nbsp;View on Github"
+identifier = "gh"
+url = "https://github.com/metricio/metricio"
+weight = 10

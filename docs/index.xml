@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Metricio - Dashboards for teams built with React and Node</title>
+    <link>/</link>
+    <description>Recent content in Home on Metricio - Dashboards for teams built with React and Node</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Oct 2017 17:53:34 +0200</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Build Status</title>
+      <link>/widgets/build-status/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/widgets/build-status/</guid>
+      <description>The build status widget is designed to show the outcome of a build process. Usually as part of a continuous integration process. The widget has two design states success and fail. Success is green and fail is red. Any other state is blue e.g. pending or running.
+Usage import BuildStatusWidget from &#39;../widgets/build-status/widget&#39;;  &amp;lt;BuildStatusWidget socket={socket} name=&amp;quot;DemoMaster&amp;quot; title=&amp;quot;Build - Master&amp;quot; size=&amp;quot;medium&amp;quot; /&amp;gt;  Props    Prop Description Required     socket Socket that widget should use for updates Yes   name Name of widget.</description>
+    </item>
+    
+    <item>
+      <title>Number</title>
+      <link>/widgets/number/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/widgets/number/</guid>
+      <description>The number widget can be found at src/widgets/number/widget.jsx. Because the number widget is the most commonly used widget, the background colours are randomised to keep the dashboards unique. So don&amp;rsquo;t be surpised if you see them change colour.
+Usage import NumberWidget from &#39;../widgets/number/widget&#39;;  &amp;lt;NumberWidget socket={socket} name=&amp;quot;MyCatWidget&amp;quot; title=&amp;quot;Catz Conversion&amp;quot; metric=&amp;quot;%&amp;quot; format=&amp;quot;0.0a&amp;quot; /&amp;gt;  Props    Prop Description Required     socket Socket that widget should use for updates Yes   name Name of widget.</description>
+    </item>
+    
+    <item>
+      <title>Ping</title>
+      <link>/widgets/ping/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/widgets/ping/</guid>
+      <description>The ping widget is used to display the outcome of a request to an API endpoint or website and report whether the response was a 200 and how long it took to get that response. If the response was 200 then the widget will remain orange. However, if the response is anything other than 200 the widget will be red.
+Usage import PingWidget from &#39;../widgets/ping/widget&#39;;  &amp;lt;PingWidget socket={socket} name=&amp;quot;GooglePing&amp;quot; title=&amp;quot;Google&amp;quot; /&amp;gt;  Props    Prop Description Required     socket Socket that widget should use for updates Yes   name Name of widget.</description>
+    </item>
+    
+    <item>
+      <title>Setup</title>
+      <link>/raspberry-pi/setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/raspberry-pi/setup/</guid>
+      <description>Step 1: Install Raspbian Use the official docs to help you install Raspbian. But it&amp;rsquo;s more than likely that your Pi already has a boot image on the SD card that came with it. So, power it up and see if you get something like below:
+Step 2: Configure Raspbian Once booted up and on the desktop of Raspbian, we need to set the Locale, Timezone, Keyboard and enable SSH.</description>
+    </item>
+    
+    <item>
+      <title>Sparkline</title>
+      <link>/widgets/sparkline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/widgets/sparkline/</guid>
+      <description>The sparkline widget is to help quickly visualize the history of a metric. The widget plots all supplied values on a sparkline line chart as best as it can. The last value supplied will be assumed as the most up to date value to display.
+Usage import SparklineWidget from &#39;../widgets/sparkline/widget&#39;;  &amp;lt;SparklineWidget socket={socket} name=&amp;quot;DemoUsers&amp;quot; title=&amp;quot;Users&amp;quot; format=&amp;quot;0.00a&amp;quot; /&amp;gt;  Props    Prop Description Required     socket Socket that widget should use for updates Yes   name Name of widget.</description>
+    </item>
+    
+    <item>
+      <title>Text</title>
+      <link>/widgets/text/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/widgets/text/</guid>
+      <description>The most basic widget available. The text widget displays text based on the job output e.g. displaying if you are deployed to green or blue if you do blue/green deployments.
+Usage import TextWidget from &#39;../widgets/text/widget&#39;;  &amp;lt;TextWidget socket={socket} name=&amp;quot;Deployment&amp;quot; title=&amp;quot;Green/Blue&amp;quot; /&amp;gt;  Props    Prop Description Required     socket Socket that widget should use for updates Yes   name Name of widget. Used to update the widget when a job completes Yes   title Title of widget.</description>
+    </item>
+    
+  </channel>
+</rss>
