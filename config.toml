@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "/metricio-docs/"
 languageCode = "en-us"
 DefaultContentLanguage = "en"
 publishDir = "docs"

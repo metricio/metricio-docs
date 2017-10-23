@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.30.2" />
 
-<title>Jobs :: Metricio - Dashboards for teams built with React and Node</title>
+<title>_Header :: Metricio - Dashboards for teams built with React and Node</title>
 <link rel="shortcut icon" href="/metricio-docs/images/favicon.png" type="image/x-icon" />
 <link href="/metricio-docs/css/nucleus.css" rel="stylesheet">
 <link href="/metricio-docs/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/metricio-docs/jobs/">
+  <body data-url="/metricio-docs/_header/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -75,7 +75,7 @@
         <span>Dashboards</span>
       </a>
     </li>
-    <li data-nav-id="/metricio-docs/jobs/" class="dd-item parent active">
+    <li data-nav-id="/metricio-docs/jobs/" class="dd-item">
       <a href="/metricio-docs/jobs/">
         <span>Jobs</span>
       </a>
@@ -162,7 +162,7 @@
 
 
 
- <a href='/metricio-docs/'>Home</a> > Jobs
+ <a href='/metricio-docs/'>Home</a> > _Header
 
  
 
@@ -173,20 +173,7 @@
     
     <div class="progress">
         <div class="wrapper">
-    <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#example">Example</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
+    
         </div>
     </div>
     
@@ -196,7 +183,7 @@
 
 <div id="body-inner">
   
-    <h1>Jobs</h1>
+    <h1>_Header</h1>
   
 
 
@@ -204,66 +191,7 @@
     
     
     
-
-
-
-<p>To create a new job you just need to add a new <strong>.js</strong> file to <strong>src/jobs</strong> directory.</p>
-
-<div class="notices note" ><p>The filename of a job is used to schedule, queue and process teh job throughout the system. So please <a href="https://imgs.xkcd.com/comics/exploits_of_a_mom.png">common sense</a> when naming them.</p>
-</div>
-
-
-<h4 id="example">Example</h4>
-
-<p>Create new job:</p>
-
-<pre><code class="language-shell">touch src/jobs/catzAPI.js
-</code></pre>
-
-<p>Add the following to <code>src/jobs/catzAPI.js</code>:</p>
-
-<pre><code class="language-javascript">// Here we use request to collect fake data from an API, but
-// you can use whatever you need
-import request from 'request-promise-native';
-
-// Define our options for request
-const options = {
-  uri: 'https://jsonplaceholder.typicode.com/users',
-  json: true,
-};
-
-// Define and export when or how often you want to the job to run
-// Use https://crontab.guru if you need help :)
-export const interval = '* * * * *';
-
-// Define and export the function to perform
-export const perform = async () =&gt; {
-
-  // Await for our request, in this care a promise, to resolve
-  const response = await request(options);
-
-  // Return an array of values. You can update many widgets from one job if you want
-  return [
-    {
-       // Name of widget to update. Assigned on dashboard creation.
-      target: 'MyCatWidget',
-      data: {
-        // Value to be passed to widget state
-        value: response.length,
-      },
-    },
-  ];
-};
-</code></pre>
-
-<p>When you next start the server, the above job will run every minute and try and update the <strong>MyCatWidget</strong> widget.</p>
-
-<p><img src="https://res.cloudinary.com/metricio/image/upload/v1508764593/catz-job_hxsepi.png" alt="" /></p>
-
-<p><div class="notices note" ><p>Each widget has a specific payload. The example above is a job to be consumed by a number widget. So only has a <strong>value</strong> data entry. It&rsquo;s important to note that if you are using a custom widget then the <strong>data</strong> above it passed to the widgets state.</p>
-</div>
-</p>
-
+    <p><img src="https://res.cloudinary.com/metricio/image/upload/v1508691520/logo-white_iop3bn.png" alt="Metricio" /></p>
 
 
     
@@ -275,8 +203,7 @@ export const perform = async () =&gt; {
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/metricio-docs/dashboards/" title="Dashboards"> <i class="fa fa-chevron-left"></i></a>
-    <a class="nav nav-next" href="/metricio-docs/widgets/" title="Widgets" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-next" href="/metricio-docs/getting-started/" title="Getting started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
