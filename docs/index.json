@@ -1,0 +1,113 @@
+[
+{
+	"uri": "/getting-started/",
+	"title": "Getting started",
+	"tags": [],
+	"description": "",
+	"content": " Requirements  Node v8.0.0+ Redis v2+  Install git clone https://github.com/dannycroft/metricio.git  npm i \u0026amp;\u0026amp; npm run start  Test npm run test  Coverage npm run coverage  Open your browser at http://localhost:3000\n"
+},
+{
+	"uri": "/customisation/",
+	"title": "Customisation",
+	"tags": [],
+	"description": "",
+	"content": "Everything you need can be found in src:\n   Path Description     /src/dasboards Where all dashboards should be created. A default dasboard is already available for you to see. See dashboards for more infomation.   /src/widgets Contains all currently available widgets. You can create your own or use the existing ones. See widgets for more infomation.   /src/jobs Contains all currently available jobs. You can create your own or use the existing ones. See jobs for more infomation.     "
+},
+{
+	"uri": "/dashboards/",
+	"title": "Dashboards",
+	"tags": [],
+	"description": "",
+	"content": " You can add as many dashboards as you want. As long as they are inside the src/dashboards folder and have a .jsx extension then they will be made available on http://localhost:3000/{dashboard-name-here}.\nExample Create new file:\ntouch src/dashboards/catz.jsx  Add the following to src/dashboards/catz.jsx:\n// You will almost alsmost need these imports import React from 'react'; import ReactDOM from 'react-dom'; import socketIOClient from 'socket.io-client'; // This is the default stylesheet feel free to add your own import '../styles/default.scss'; // Import the widget(s) you want to use import NumberWidget from '../widgets/number/widget'; // Make sure each client gets a socket connection. This will allow your // widget(s) to subscribe to data events from processed jobs const socket = socketIOClient(`http://${window.location.host}`); ReactDOM.render( \u0026lt;div className=\u0026quot;dashboard\u0026quot;\u0026gt; // Add your widgets and define your props. See widget docs for more info. \u0026lt;NumberWidget socket={socket} name=\u0026quot;MyCatWidget\u0026quot; title=\u0026quot;Catz\u0026quot; /\u0026gt; \u0026lt;/div\u0026gt;, document.getElementById('content'), );  Now you can run:\nnpm run start  and browse to http://localhost:3000/catz\nEt voila! Now you are ready to make your first job and test the other widgets available.\nHead over to jobs to see how add a job for this example.\n"
+},
+{
+	"uri": "/jobs/",
+	"title": "Jobs",
+	"tags": [],
+	"description": "",
+	"content": " To create a new job you just need to add a new .js file to src/jobs directory.\nThe filename of a job is used to schedule, queue and process teh job throughout the system. So please common sense when naming them.\n Example Create new job:\ntouch src/jobs/catzAPI.js  Add the following to src/jobs/catzAPI.js:\n// Here we use request to collect fake data from an API, but // you can use whatever you need import request from 'request-promise-native'; // Define our options for request const options = { uri: 'https://jsonplaceholder.typicode.com/users', json: true, }; // Define and export when or how often you want to the job to run // Use https://crontab.guru if you need help :) export const interval = '* * * * *'; // Define and export the function to perform export const perform = async () =\u0026gt; { // Await for our request, in this care a promise, to resolve const response = await request(options); // Return an array of values. You can update many widgets from one job if you want return [ { // Name of widget to update. Assigned on dashboard creation. target: 'MyCatWidget', data: { // Value to be passed to widget state value: response.length, }, }, ]; };  When you next start the server, the above job will run every minute and try and update the MyCatWidget widget.\nEach widget has a specific payload. The example above is a job to be consumed by a number widget. So only has a value data entry. It\u0026rsquo;s important to note that if you are using a custom widget then the data above it passed to the widgets state.\n "
+},
+{
+	"uri": "/widgets/",
+	"title": "Widgets",
+	"tags": [],
+	"description": "",
+	"content": "  Build Status Number Ping Sparkline Text  "
+},
+{
+	"uri": "/storage/",
+	"title": "Storage",
+	"tags": [],
+	"description": "",
+	"content": "If you have a specific Redis configuration then you can set the following environment variables, otherwise defaults will be used:\n Host: REDIS_SERVER_HOST Port: REDIS_SERVER_PORT Password: REDIS_SERVER_PASSWORD  "
+},
+{
+	"uri": "/raspberry-pi/",
+	"title": "Raspberry Pi",
+	"tags": [],
+	"description": "",
+	"content": "This framework was created to enable many dashboards to be powered by one machine. Once metricio is up and running on a machine you can connect it to your local network and use it as a server. Just use the local IP address of the server machine and browse to that with as many clients as you need. Preferebly with a modern browser.\n Setup  "
+},
+{
+	"uri": "/",
+	"title": "Home",
+	"tags": [],
+	"description": "",
+	"content": "FAST \u0026 SIMPLE DASHBOARDS FOR ALL YOUR METRICS  \nMetricio (🔊) is a dashboard framework that helps you display metrics and monitor systems and APIs.\nSimple to get started and quick to create build screens for all your teams.\nMetricio has a similar design and achitecture to Dashing, which was my \u0026ldquo;goto\u0026rdquo; framework for dashboards for years. Unfortunately, Dashing is no longer maintained. But if you still prefer to write CoffeeScript and Ruby then that framework is still awesome!\nMetricio allows you to:\n Build widgets with React components Create jobs with Node.js and async/await Support for multiple dashboards CRON like scheduling with node-scheduler Caching handled with Redis Event-based communication with socket.io Number formatting with Numeral  The UI aims to use little resource as possible. Enabling your dashboards to run without crashing for prolonged lengths of time on even the most neglected Raspberry Pi.\n"
+},
+{
+	"uri": "/widgets/build-status/",
+	"title": "Build Status",
+	"tags": [],
+	"description": "",
+	"content": " The build status widget is designed to show the outcome of a build process. Usually as part of a continuous integration process. The widget has two design states success and fail. Success is green and fail is red. Any other state is blue e.g. pending or running.\nUsage import BuildStatusWidget from '../widgets/build-status/widget';  \u0026lt;BuildStatusWidget socket={socket} name=\u0026quot;DemoMaster\u0026quot; title=\u0026quot;Build - Master\u0026quot; size=\u0026quot;medium\u0026quot; /\u0026gt;  Props    Prop Description Required     socket Socket that widget should use for updates Yes   name Name of widget. Used to update the widget when a job completes Yes   title Title of widget. Usually displayed above the outcome value Yes   size Size of the widget: small (default) or medium can be used Optional    Data Stucture When building a job for the build-status widget, a single value should be used e.g.\n// Successfull build data: { outcome: 'success' }; // Failed build data: { outcome: 'fail' };  Example Sizes will vary as widgets are responsive to the viewport\n "
+},
+{
+	"uri": "/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/widgets/number/",
+	"title": "Number",
+	"tags": [],
+	"description": "",
+	"content": " The number widget can be found at src/widgets/number/widget.jsx. Because the number widget is the most commonly used widget, the background colours are randomised to keep the dashboards unique. So don\u0026rsquo;t be surpised if you see them change colour.\nUsage import NumberWidget from '../widgets/number/widget';  \u0026lt;NumberWidget socket={socket} name=\u0026quot;MyCatWidget\u0026quot; title=\u0026quot;Catz Conversion\u0026quot; metric=\u0026quot;%\u0026quot; format=\u0026quot;0.0a\u0026quot; /\u0026gt;  Props    Prop Description Required     socket Socket that widget should use for updates Yes   name Name of widget. Used to update the widget when a job completes Yes   title Title of widget. Usually displayed above the metric value Yes   metric Metric to use for value passed to widget e.g. % Optional   format How to format the widget value. See Numeral docs. Optional   size Size of the widget: small (default) or medium can be used Optional    Data Stucture When building a job for a number widget, a single value should be used e.g.\ndata: { value: 24 };  Example "
+},
+{
+	"uri": "/widgets/ping/",
+	"title": "Ping",
+	"tags": [],
+	"description": "",
+	"content": " The ping widget is used to display the outcome of a request to an API endpoint or website and report whether the response was a 200 and how long it took to get that response. If the response was 200 then the widget will remain orange. However, if the response is anything other than 200 the widget will be red.\nUsage import PingWidget from '../widgets/ping/widget';  \u0026lt;PingWidget socket={socket} name=\u0026quot;GooglePing\u0026quot; title=\u0026quot;Google\u0026quot; /\u0026gt;  Props    Prop Description Required     socket Socket that widget should use for updates Yes   name Name of widget. Used to update the widget when a job completes Yes   title Title of widget. Usually displayed above the metric value Yes   size Size of the widget: small (default) or medium can be used Optional    Data Stucture When building a job for a ping widget, a status value and and time value should be sent e.g.\n// Successful data: { status: 200, // HTTP Status Code time: 726, // Request Time (ms) } // Failed data: { status: 500, time: 0, }  Example "
+},
+{
+	"uri": "/raspberry-pi/setup/",
+	"title": "Setup",
+	"tags": [],
+	"description": "",
+	"content": " Step 1: Install Raspbian Use the official docs to help you install Raspbian. But it\u0026rsquo;s more than likely that your Pi already has a boot image on the SD card that came with it. So, power it up and see if you get something like below:\nStep 2: Configure Raspbian Once booted up and on the desktop of Raspbian, we need to set the Locale, Timezone, Keyboard and enable SSH.\n click on the Raspberry Pi menu icon Select Preferences, Raspberry Pi Configuration In the Raspberry Pi Configuration, on the Interfaces tab Next to SSH, select enable, click OK In Raspberry Pi Configuration, on the Localisation tab, click Set Locale Select the Language (eg en), Country (eg CA) and leave Character Set at UTF-8, click OK In Raspberry Pi Configuration, on the Localisation tab, click Set Timezone Select the Area (eg Canada), Location (eg Eastern), click OK In Raspberry Pi Configuration, on the Localisation tab, click Set Keyboard Select the Country, Variant and click OK In Raspberry Pi Configuration, click OK, and reboot  Step 2: Updates In the terminal run the following commands, each one after the other has finished:\n sudo apt-get update -y sudo apt-get upgrade -y sudo apt-get dist-upgrade -y sudo apt-get autoremove -y  Step 3: Dashboard Dependencies In the terminal run the following commands, each one after the other has finished:\n sudo apt-get install -y chromium-browser sudo apt-get install -y ttf-mscorefonts-installer sudo apt-get install -y unclutter sudo apt-get install -y x11-xserver-utils  This will install everything you need to get a fullscreen dashboard running\nStep 4: Boot Setup We need to configure the PI to boot straight to the dashboard. You will need the IP of the server running the dashboard.\nsudo vi .config/lxsession/LXDE-pi/autostart\nComment out the following line: (Put a # before it)\n@xscreensaver -no-splash  Add the following to the bottom of the file: (replace http://192.168.0.1 with your server IP)\n@/usr/bin/chromium-browser --incognito --start-maximized --kiosk http://192.168.0.1 @unclutter @xset s off @xset s noblank @xset -dpms  Step 5: SSH Open the terminal and find the Pi\u0026rsquo;s IP address: ifconfig. Make sure you are connected to your network first. Note down the IP.\nConnect to your PI from another machine: (replace 192.168.0.10 with actual IP)\nssh pi@192.168.0.10\nMost of the time the user is set to pi and the default password is raspberry. You will probably want change this. You can do that with passwd.\nStep 4: Reboot You should now be able to reboot the PI and watch it boot straight to a browser, go fullscreen and load your dashboard from your server. You can do the above for as many PI\u0026rsquo;s as you like.\n"
+},
+{
+	"uri": "/widgets/sparkline/",
+	"title": "Sparkline",
+	"tags": [],
+	"description": "",
+	"content": " The sparkline widget is to help quickly visualize the history of a metric. The widget plots all supplied values on a sparkline line chart as best as it can. The last value supplied will be assumed as the most up to date value to display.\nUsage import SparklineWidget from '../widgets/sparkline/widget';  \u0026lt;SparklineWidget socket={socket} name=\u0026quot;DemoUsers\u0026quot; title=\u0026quot;Users\u0026quot; format=\u0026quot;0.00a\u0026quot; /\u0026gt;  Props    Prop Description Required     socket Socket that widget should use for updates Yes   name Name of widget. Used to update the widget when a job completes Yes   title Title of widget. Usually displayed above the metric value Yes   format How to format the widget value. See Numeral docs. Optional    Data Stucture When building a job for the sparkline widget, the value entry should be an Array of muliptle data points for the sparkline graph to plot. The last value will be assumed as the latest value:\ndata: { value: [ 1144,1425,1223,1267,1267,1180,1122,1399, 1271,1431,1353,1111,1225,1340,1098,1012, 1223,1109,1133,1371,1050,1463,1324,1161, 1191,1294,1066,1041,1445,1172 ] }  Example "
+},
+{
+	"uri": "/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/widgets/text/",
+	"title": "Text",
+	"tags": [],
+	"description": "",
+	"content": " The most basic widget available. The text widget displays text based on the job output e.g. displaying if you are deployed to green or blue if you do blue/green deployments.\nUsage import TextWidget from '../widgets/text/widget';  \u0026lt;TextWidget socket={socket} name=\u0026quot;Deployment\u0026quot; title=\u0026quot;Green/Blue\u0026quot; /\u0026gt;  Props    Prop Description Required     socket Socket that widget should use for updates Yes   name Name of widget. Used to update the widget when a job completes Yes   title Title of widget. Usually displayed above the metric value Yes   size Size of the widget: small (default) or medium can be used Optional    Data Stucture When building a job for a text widget, a single value should be used e.g.\ndata: { value: 'green' };  Example "
+}]

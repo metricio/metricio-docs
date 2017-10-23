@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Metricio - Dashboards for teams built with React and Node</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="generator" content="Hugo 0.30.2" />
+
+<title>Setup :: Metricio - Dashboards for teams built with React and Node</title>
+<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link href="/css/nucleus.css" rel="stylesheet">
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/hybrid.css" rel="stylesheet">
+<link href="/css/featherlight.min.css" rel="stylesheet">
+<link href="/css/auto-complete.css" rel="stylesheet">
+<link href="/theme-original/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-2.x.min.js"></script>
+<style type="text/css">
+  :root #header + #content > #left > #rlblock_left {
+    display:none !important;
+  }
+</style>
+<meta name="description" content="">
+
+
+    
+  </head>
+  <body data-url="/raspberry-pi/setup/">
+    
+      <div id="headermain"></div>
+<nav id="sidebar" class="">
+
+
+
+<div class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+		
+		<span style="font-size:smaller">
+		<a id="logo" href="/">
+		  <span class="fa fa-gears" style="font-size:large"></span>
+		</a>
+		Create a _header.md to customize this
+		</small>
+		
+    </div>
+        <div class="searchbox">
+		    <label for="search-by"><i class="fa fa-search"></i></label>
+		    <input data-search-input id="search-by" type="text" placeholder="Search...">
+		    <span data-search-clear=""><i class="fa fa-close"></i></span>
+		</div>
+		<script type="text/javascript" src="/js/lunr.min.js"></script>
+		<script type="text/javascript" src="/js/auto-complete.js"></script>
+		<script type="text/javascript">
+		    var baseurl = "\/";
+		</script>
+		<script type="text/javascript" src="/js/search.js"></script>
+  </div>
+
+      <ul class="topics">
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+    <li data-nav-id="/getting-started/" class="dd-item parent">
+      <a href="/getting-started/">
+        <span>Getting started</span>
+      </a>
+    </li>
+    <li data-nav-id="/customisation/" class="dd-item">
+      <a href="/customisation/">
+        <span>Customisation</span>
+      </a>
+    </li>
+    <li data-nav-id="/dashboards/" class="dd-item">
+      <a href="/dashboards/">
+        <span>Dashboards</span>
+      </a>
+    </li>
+    <li data-nav-id="/jobs/" class="dd-item">
+      <a href="/jobs/">
+        <span>Jobs</span>
+      </a>
+    </li>
+    <li data-nav-id="/widgets/" class="dd-item">
+      <a href="/widgets/">
+        <span>Widgets</span><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </a>
+        <ul>
+      <li data-nav-id="/widgets/build-status/" class="dd-item">
+        <a href="/widgets/build-status/">
+          <span>Build Status</span>
+        </a>
+    </li>
+      <li data-nav-id="/widgets/number/" class="dd-item">
+        <a href="/widgets/number/">
+          <span>Number</span>
+        </a>
+    </li>
+      <li data-nav-id="/widgets/ping/" class="dd-item">
+        <a href="/widgets/ping/">
+          <span>Ping</span>
+        </a>
+    </li>
+      <li data-nav-id="/widgets/sparkline/" class="dd-item">
+        <a href="/widgets/sparkline/">
+          <span>Sparkline</span>
+        </a>
+    </li>
+      <li data-nav-id="/widgets/text/" class="dd-item">
+        <a href="/widgets/text/">
+          <span>Text</span>
+        </a>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/storage/" class="dd-item">
+      <a href="/storage/">
+        <span>Storage</span>
+      </a>
+    </li>
+    <li data-nav-id="/raspberry-pi/" class="dd-item parent">
+      <a href="/raspberry-pi/">
+        <span>Raspberry Pi</span>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+      </a>
+        <ul>
+      <li data-nav-id="/raspberry-pi/setup/" class="dd-item active">
+        <a href="/raspberry-pi/setup/">
+          <span>Setup</span>
+        </a>
+    </li>
+        </ul>
+    </li>
+
+
+
+        <section id="shortcuts">
+                <li class="" role=""><h3>More</h3><a href="https://github.com/metricio/metricio" target="_blank" rel="noopener"><i class='fa fa-github'></i>&nbsp;&nbsp;View on Github</a></li>
+        </section>
+    </ul>
+
+ <section id="footer">
+    </section>
+  </div>
+</nav>
+
+
+
+<section id="body">
+<div id="overlay"></div>
+<div class="padding highlightable">
+
+  <div id="top-bar">
+    <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span id="sidebar-toggle-span">
+          <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+            <i class="fa fa-bars"></i>
+          </a>
+        </span>
+        <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+        <span class="links">
+        
+
+
+
+
+
+
+
+ <a href='/'>Home</a> > <a href='/raspberry-pi/'>Raspberry Pi</a> > Setup
+
+ 
+
+ 
+
+   
+        </span>
+    </div>
+    
+    
+    <div class="progress">
+        <div class="wrapper">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#step-1-install-raspbian">Step 1: Install Raspbian</a></li>
+<li><a href="#step-2-configure-raspbian">Step 2: Configure Raspbian</a></li>
+<li><a href="#step-2-updates">Step 2: Updates</a></li>
+<li><a href="#step-3-dashboard-dependencies">Step 3: Dashboard Dependencies</a></li>
+<li><a href="#step-4-boot-setup">Step 4: Boot Setup</a></li>
+<li><a href="#step-5-ssh">Step 5: SSH</a></li>
+<li><a href="#step-4-reboot">Step 4: Reboot</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+    </div>
+    
+
+  </div>
+
+
+<div id="body-inner">
+  
+    <h1>Setup</h1>
+  
+
+
+
+    
+    
+    
+    
+
+<h4 id="step-1-install-raspbian">Step 1: Install Raspbian</h4>
+
+<p>Use the <a href="https://www.raspberrypi.org/documentation/installation/installing-images/README.md">official</a> docs to help you install Raspbian. But it&rsquo;s more than likely that your Pi already has a boot image on the SD card that came with it. So, power it up and see if you get something like below:</p>
+
+<p><img src="https://res.cloudinary.com/metricio/image/upload/v1508772521/boot-screen_vnmayk.png" alt="" /></p>
+
+<h4 id="step-2-configure-raspbian">Step 2: Configure Raspbian</h4>
+
+<p>Once booted up and on the desktop of Raspbian, we need to set the Locale, Timezone, Keyboard and enable SSH.</p>
+
+<ul>
+<li>click on the Raspberry Pi menu icon</li>
+<li>Select <strong>Preferences</strong>, <strong>Raspberry Pi Configuration</strong></li>
+<li>In the <strong>Raspberry Pi Configuration</strong>, on the <strong>Interfaces</strong> tab</li>
+<li>Next to <strong>SSH</strong>, select <strong>enable</strong>, click <strong>OK</strong></li>
+<li>In <strong>Raspberry Pi Configuration</strong>, on the <strong>Localisation</strong> tab, click <strong>Set Locale</strong></li>
+<li>Select the Language (eg en), Country (eg CA) and leave Character Set at UTF-8, click <strong>OK</strong></li>
+<li>In <strong>Raspberry Pi Configuration</strong>, on the <strong>Localisation</strong> tab, click <strong>Set Timezone</strong></li>
+<li>Select the Area (eg Canada), Location (eg Eastern), click <strong>OK</strong></li>
+<li>In <strong>Raspberry Pi Configuration</strong>, on the <strong>Localisation</strong> tab, click <strong>Set Keyboard</strong></li>
+<li>Select the Country, Variant and click <strong>OK</strong></li>
+<li>In <strong>Raspberry Pi Configuration</strong>, click <strong>OK</strong>, and reboot</li>
+</ul>
+
+<h4 id="step-2-updates">Step 2: Updates</h4>
+
+<p>In the terminal run the following commands, each one after the other has finished:</p>
+
+<ul>
+<li><code>sudo apt-get update -y</code></li>
+<li><code>sudo apt-get upgrade -y</code></li>
+<li><code>sudo apt-get dist-upgrade -y</code></li>
+<li><code>sudo apt-get autoremove -y</code></li>
+</ul>
+
+<h4 id="step-3-dashboard-dependencies">Step 3: Dashboard Dependencies</h4>
+
+<p>In the terminal run the following commands, each one after the other has finished:</p>
+
+<ul>
+<li><code>sudo apt-get install -y chromium-browser</code></li>
+<li><code>sudo apt-get install -y ttf-mscorefonts-installer</code></li>
+<li><code>sudo apt-get install -y unclutter</code></li>
+<li><code>sudo apt-get install -y x11-xserver-utils</code></li>
+</ul>
+
+<p>This will install everything you need to get a fullscreen dashboard running</p>
+
+<h4 id="step-4-boot-setup">Step 4: Boot Setup</h4>
+
+<p>We need to configure the PI to boot straight to the dashboard. You will need the IP of the server running the dashboard.</p>
+
+<p><code>sudo vi .config/lxsession/LXDE-pi/autostart</code></p>
+
+<p>Comment out the following line: <em>(Put a # before it)</em></p>
+
+<pre><code class="language-bash">@xscreensaver -no-splash
+</code></pre>
+
+<p>Add the following to the bottom of the file: <em>(replace <a href="http://192.168.0.1">http://192.168.0.1</a> with your server IP)</em></p>
+
+<pre><code class="language-bash">@/usr/bin/chromium-browser --incognito --start-maximized --kiosk http://192.168.0.1
+@unclutter
+@xset s off
+@xset s noblank
+@xset -dpms
+</code></pre>
+
+<h4 id="step-5-ssh">Step 5: SSH</h4>
+
+<p>Open the terminal and find the Pi&rsquo;s IP address: <code>ifconfig</code>. Make sure you are connected to your network first. Note down the IP.</p>
+
+<p>Connect to your PI from another machine: <em>(replace 192.168.0.10 with actual IP)</em></p>
+
+<p><code>ssh pi@192.168.0.10</code></p>
+
+<p>Most of the time the user is set to <code>pi</code> and the default password is <code>raspberry</code>. You will probably want change this. You can do that with <code>passwd</code>.</p>
+
+<h4 id="step-4-reboot">Step 4: Reboot</h4>
+
+<p>You should now be able to reboot the PI and watch it boot straight to a browser, go fullscreen and load your dashboard from your server. You can do the above for as many PI&rsquo;s as you like.</p>
+
+<p><img src="http://res.cloudinary.com/metricio/image/upload/c_scale,w_489/v1508775215/IMG_20171023_180920_Bokeh_mor3lp.jpg" alt="" /></p>
+
+
+    
+    
+          <footer class=" footline" >
+	
+</footer>
+  </div>
+</div>
+
+<div id="navigation">
+<a class="nav nav-prev" href="/raspberry-pi/" title="Raspberry Pi"> <i class="fa fa-chevron-left"></i></a>
+    <a class="nav nav-next" href="/getting-started/" title="Getting started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a></div>
+
+</section>
+<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+  <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+</div>    
+
+<script src="/js/clipboard.min.js"></script>
+<script src="/js/featherlight.min.js"></script>
+<script src="/js/html5shiv-printshiv.min.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="/js/modernizr.custom.71422.js"></script>
+<script src="/js/docdock.js"></script>
+<script src="/theme-original/script.js"></script>
+
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

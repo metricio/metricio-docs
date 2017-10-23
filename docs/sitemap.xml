@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/getting-started/</loc>
+  </url>
+  
+  <url>
+    <loc>/customisation/</loc>
+  </url>
+  
+  <url>
+    <loc>/dashboards/</loc>
+  </url>
+  
+  <url>
+    <loc>/jobs/</loc>
+  </url>
+  
+  <url>
+    <loc>/widgets/</loc>
+  </url>
+  
+  <url>
+    <loc>/storage/</loc>
+  </url>
+  
+  <url>
+    <loc>/raspberry-pi/</loc>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2017-10-22T17:53:34+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/widgets/build-status/</loc>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/widgets/number/</loc>
+  </url>
+  
+  <url>
+    <loc>/widgets/ping/</loc>
+  </url>
+  
+  <url>
+    <loc>/raspberry-pi/setup/</loc>
+  </url>
+  
+  <url>
+    <loc>/widgets/sparkline/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/widgets/text/</loc>
+  </url>
+  
+</urlset>
