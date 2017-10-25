@@ -1,3 +1,7 @@
 [submodule "themes/docdock"]
 	path = themes/docdock
 	url = https://github.com/vjeantet/hugo-theme-docdock
+[submodule "public"]
+	path = public
+	url = git@github.com:metricio/metricio.github.io.git
+	branch = master
