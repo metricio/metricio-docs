@@ -8,6 +8,9 @@ theme = "docdock"
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
 
+[params]
+editURL = "https://github.com/metricio/metricio-docs/blob/master/content/"
+
 [[menu.shortcuts]]
 pre = "<h3>More</h3>"
 name = "<i class='fa fa-github'></i>&nbsp;&nbsp;View on Github"
