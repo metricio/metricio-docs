@@ -1,7 +1,6 @@
-baseURL = "/metricio-docs/"
 languageCode = "en-us"
 DefaultContentLanguage = "en"
-publishDir = "docs"
+baseURL = "/"
 
 title = "Metricio - Dashboards for teams built with React and Node"
 theme = "docdock"
