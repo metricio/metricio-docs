@@ -5,6 +5,8 @@ weight = 1
 alwaysopen = true
 +++
 
+Make sure you have met the requirements below before going through the installation.
+
 ## Requirements
 
   - Node v8.0.0+
@@ -13,7 +15,7 @@ alwaysopen = true
 ## Install
 
 ```
-git clone https://github.com/dannycroft/metricio.git
+git clone https://github.com/metricio/metricio.git
 ```
 
 ```
