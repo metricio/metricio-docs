@@ -2,7 +2,7 @@
 title = "CircleCI"
 +++
 
-Below is a basic example of a job to get your build status from CircleCI and then how to integrate the build status widget into your dashboard using the result from the job.
+Below is a basic example of a job to get your build status from CircleCI and then how to integrate the [build status](/widgets/build-status/) widget into your dashboard using the result from the job.
 
 ### Job
 
