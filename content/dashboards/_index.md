@@ -4,7 +4,7 @@ description = ""
 weight = 3
 +++
 
-You can add as many dashboards as you want. As long as they are inside the **src/dashboards** folder and have a **.jsx** extension then they will be made available on `http://localhost:3000/{dashboard-name-here}`.
+You can add as many dashboards as you want, as long as they are inside the **src/dashboards** folder. A dashboard must have a **.jsx** extension. All new dashboards will be available after a server restart: `http://localhost:3000/{dashboard-name-here}`.
 
 #### Example
 
@@ -51,6 +51,6 @@ and browse to `http://localhost:3000/catz`
 
 ![](https://res.cloudinary.com/metricio/image/upload/v1508761820/catz_xanftt.png)
 
-Et voila! Now you are ready to make your first job and test the other widgets available.
+Et voila! You are now ready to make your first job and test the other widgets available.
 
 Head over to [jobs](/jobs) to see how add a job for this example.
