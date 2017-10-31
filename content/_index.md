@@ -24,6 +24,6 @@ Metricio allows you to:
 - Event-based communication with [socket.io](https://socket.io/)
 - Number formatting with [Numeral](http://numeraljs.com/)
 
-The UI aims to use a little resource as possible. Enabling your dashboards to run without crashing for prolonged lengths of time on even the most neglected Raspberry Pi.
+The UI aims to use as little resource as possible. Enabling your dashboards to run without crashing for prolonged lengths of time on even the most neglected Raspberry Pi.
 
   ![Example](https://res.cloudinary.com/metricio/image/upload/v1508687267/metricio_yxmmxo.gif)

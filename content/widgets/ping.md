@@ -2,7 +2,7 @@
 title = "Ping"
 +++
 
-The ping widget is used to display the outcome of a request to an API endpoint or website and report whether the response was a 200 and how long it took to get that response. If the response was 200 then the widget will remain **orange**. However, if the response is anything other than 200 the widget will be **red**.
+The ping widget is used to display the outcome of a request to an API endpoint or website and report whether the response was a 200 and how long it took to get that response. If the response was 200, then the widget will remain **orange**. However, if the response is anything other than 200 the widget will be **red**.
 
 #### Usage
 

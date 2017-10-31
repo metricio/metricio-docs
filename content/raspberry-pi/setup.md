@@ -75,11 +75,10 @@ Connect to your PI from another machine: *(replace 192.168.0.10 with actual IP)*
 
 `ssh pi@192.168.0.10`
 
-Most of the time the user is set to `pi` and the default password is `raspberry`. You will probably want change this. You can do that with `passwd`.
+Most of the time the user is set to `pi` and the default password is `raspberry`. You will probably want to change this. You can do that with `passwd`.
 
 #### Step 4: Reboot
 
 You should now be able to reboot the PI and watch it boot straight to a browser, go fullscreen and load your dashboard from your server. You can do the above for as many PI's as you like.
-
 
 ![](http://res.cloudinary.com/metricio/image/upload/c_scale,w_489/v1508775215/IMG_20171023_180920_Bokeh_mor3lp.jpg)

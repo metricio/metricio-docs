@@ -2,7 +2,7 @@
 title = "Sparkline"
 +++
 
-The sparkline widget is to help quickly visualize the history of a metric. The widget plots all supplied values on a sparkline line chart as best as it can. The last value supplied will be assumed as the most up to date value to display.
+The sparkline widget is to help quickly visualise the history of a metric. The widget plots all supplied values on a sparkline line chart as best as it can. The last value provided will be assumed as the most up to date value to display.
 
 #### Usage
 
@@ -30,7 +30,7 @@ The sparkline widget is to help quickly visualize the history of a metric. The w
 
 #### Data Stucture
 
-When building a job for the sparkline widget, the value entry should be an **Array** of muliptle data points for the sparkline graph to plot. The last value will be assumed as the latest value:
+When building a job for the sparkline widget, the value entry should be an **Array** of multiple data points for the sparkline graph to plot. The last value provided is assumed to be the latest value:
 
 ``` javascript
   data: {

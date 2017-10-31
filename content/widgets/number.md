@@ -2,7 +2,7 @@
 title = "Number"
 +++
 
-The number widget can be found at  **src/widgets/number/widget.jsx**. Because the number widget is the most commonly used widget, the background colours are randomised to keep the dashboards unique. So don't be surpised if you see them change colour.
+The number widget can be found at  **src/widgets/number/widget.jsx**. Because the number widget is the most commonly used widget, the background colours are randomised to keep the dashboards unique. So don't be surprised if you see them change colour.
 
 #### Usage
 

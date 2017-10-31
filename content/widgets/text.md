@@ -2,7 +2,7 @@
 title = "Text"
 +++
 
-The most basic widget available. The text widget displays text based on the job output e.g. displaying if you are deployed to green or blue if you do blue/green deployments.
+The text widget is the most basic widget available. This widget displays text based on the output of a job, e.g. showing if you are deployed to green or blue if you do blue/green deployments.
 
 #### Usage
 
@@ -29,7 +29,7 @@ The most basic widget available. The text widget displays text based on the job 
 
 #### Data Stucture
 
-When building a job for a text widget, a single value should be used e.g.
+When building a job for a text widget, a single value should be provided e.g.
 
 ``` javascript
 data: { value: 'green' };
