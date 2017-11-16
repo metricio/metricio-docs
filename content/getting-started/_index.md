@@ -14,13 +14,14 @@ Make sure you have met the requirements below before going through the installat
 
 ## Install
 
-```
-git clone https://github.com/metricio/metricio.git
-```
+Download the latest release from [Github](https://github.com/metricio/metricio/releases), unzip it to your desired location and run the following inside that folder:
 
 ```
 npm i && npm run start
 ```
+
+Open your browser at `http://localhost:3000`
+
 
 ## Test
 
@@ -33,5 +34,3 @@ npm run test
 ```
 npm run coverage
 ```
-
-Open your browser at `http://localhost:3000`
