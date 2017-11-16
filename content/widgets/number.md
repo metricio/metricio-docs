@@ -33,9 +33,9 @@ The number widget can be found at  **src/widgets/number/widget.jsx**. Because th
 When building a job for a number widget, a single value should be used e.g.
 
 ``` json
-data: { value: 24 };
+data: { value: 1.4 };
 ```
 
 #### Example
 
-![](https://res.cloudinary.com/metricio/image/upload/v1508766422/cats-conversion_tz5udf.png)
+![](https://res.cloudinary.com/metricio/image/upload/v1510872139/catz-conversion_tpym8o.png)
