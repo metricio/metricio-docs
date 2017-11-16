@@ -12,7 +12,6 @@ The sparkline widget is to help quickly visualise the history of a metric. The w
 
 ``` html
   <SparklineWidget
-    socket={socket}
     name="DemoUsers"
     title="Users"
     format="0.00a"
@@ -23,7 +22,6 @@ The sparkline widget is to help quickly visualise the history of a metric. The w
 
 | **Prop** | **Description** | **Required**
 |:--|:--|:--|
-| socket | Socket that widget should use for updates | Yes
 | name | Name of widget. Used to update the widget when a job completes | Yes
 | title | Title of widget. Usually displayed above the metric value | Yes
 | format | How to format the widget value. See [Numeral](http://numeraljs.com/#format) docs. | Optional

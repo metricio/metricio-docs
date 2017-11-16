@@ -12,11 +12,9 @@ The number widget can be found at  **src/widgets/number/widget.jsx**. Because th
 
 ``` html
   <NumberWidget
-    socket={socket}
     name="MyCatWidget"
     title="Catz Conversion"
     metric="%"
-    format="0.0a"
   />
 ```
 
@@ -24,7 +22,6 @@ The number widget can be found at  **src/widgets/number/widget.jsx**. Because th
 
 | **Prop** | **Description** | **Required**
 |:--|:--|:--|
-| socket | Socket that widget should use for updates | Yes
 | name | Name of widget. Used to update the widget when a job completes | Yes
 | title | Title of widget. Usually displayed above the metric value | Yes
 | metric | Metric to use for value passed to widget e.g. % | Optional

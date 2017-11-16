@@ -12,7 +12,6 @@ The text widget is the most basic widget available. This widget displays text ba
 
 ``` html
   <TextWidget
-    socket={socket}
     name="Deployment"
     title="Green/Blue"
   />
@@ -22,7 +21,6 @@ The text widget is the most basic widget available. This widget displays text ba
 
 | **Prop** | **Description** | **Required**
 |:--|:--|:--|
-| socket | Socket that widget should use for updates | Yes
 | name | Name of widget. Used to update the widget when a job completes | Yes
 | title | Title of widget. Usually displayed above the metric value | Yes
 | size | Size of the widget: *small* (default) or *medium* can be used | Optional

@@ -17,26 +17,22 @@ touch src/dashboards/catz.jsx
 Add the following to `src/dashboards/catz.jsx`:
 
 ``` javascript
-// You will almost alsmost need these imports
 import React from 'react';
 import ReactDOM from 'react-dom';
-import socketIOClient from 'socket.io-client';
 
 // This is the default stylesheet feel free to add your own
 import '../styles/default.scss';
 
-// Import the widget(s) you want to use
+// Import the dashboard widget
+import Dashboard from '../widgets/dashboard';
+
+// Import the widgets you want to show on your dashboard
 import NumberWidget from '../widgets/number/widget';
 
-// Make sure each client gets a socket connection. This will allow your
-// widget(s) to subscribe to data events from processed jobs
-const socket = socketIOClient(`http://${window.location.host}`);
-
 ReactDOM.render(
-  <div className="dashboard">
-      // Add your widgets and define your props. See widget docs for more info.
-    <NumberWidget socket={socket} name="MyCatWidget" title="Catz" />
-  </div>,
+  <Dashboard>
+    <NumberWidget name="MyCatWidget" title="Catz" />
+  </Dashboard>,
   document.getElementById('content'),
 );
 ```

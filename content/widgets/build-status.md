@@ -10,7 +10,6 @@ The build status widget is designed to show the outcome of a build process. Usua
 ```
 ``` html
   <BuildStatusWidget
-    socket={socket}
     name="DemoMaster"
     title="Build - Master"
     size="medium"
@@ -21,7 +20,6 @@ The build status widget is designed to show the outcome of a build process. Usua
 
 | **Prop** | **Description** | **Required**
 |:--|:--|:--|
-| socket | Socket that widget should use for updates | Yes
 | name | Name of widget. Used to update the widget when a job completes | Yes
 | title | Title of widget. Usually displayed above the outcome value | Yes
 | size | Size of the widget: *small* (default) or *medium* can be used | Optional

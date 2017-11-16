@@ -12,7 +12,6 @@ The ping widget is used to display the outcome of a request to an API endpoint o
 
 ``` html
   <PingWidget
-    socket={socket}
     name="GooglePing"
     title="Google"
   />
@@ -22,7 +21,6 @@ The ping widget is used to display the outcome of a request to an API endpoint o
 
 | **Prop** | **Description** | **Required**
 |:--|:--|:--|
-| socket | Socket that widget should use for updates | Yes
 | name | Name of widget. Used to update the widget when a job completes | Yes
 | title | Title of widget. Usually displayed above the metric value | Yes
 | size | Size of the widget: *small* (default) or *medium* can be used | Optional

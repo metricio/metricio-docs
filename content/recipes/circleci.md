@@ -21,7 +21,7 @@ function getBranch(repo, branch, limit = 10) {
       limit,
     },
     headers: {
-      'User-Agent': 'Metrician - CircleCI',
+      'User-Agent': 'Metricio - CircleCI',
     },
     json: true,
   };
@@ -64,13 +64,13 @@ export const perform = async () => {
 ```
 
 ``` html
-<BuildStatusWidget socket={socket}
+<BuildStatusWidget
   name="BuildDevelop"
   title="Build - Develop"
   size="medium"
 />
 
-<BuildStatusWidget socket={socket}
+<BuildStatusWidget
   name="BuildMaster"
   title="Build - Master"
   size="medium"

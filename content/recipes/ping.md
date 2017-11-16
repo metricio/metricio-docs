@@ -50,8 +50,8 @@ export const perform = async () => {
 ```
 
 ``` html
-<Ping socket={socket} name="GooglePing" title="Google" />
-<Ping socket={socket} name="RedditPing" title="Reddit" />
+<Ping name="GooglePing" title="Google" />
+<Ping name="RedditPing" title="Reddit" />
 ```
 
 Now everytime the above job completes successfully, widgets **GooglePing** and **RedditPing** will get updated with the ping response times.
