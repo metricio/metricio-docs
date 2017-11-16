@@ -26,4 +26,4 @@ Metricio allows you to:
 
 The UI aims to use as little resource as possible. Enabling your dashboards to run without crashing for prolonged lengths of time on even the most neglected Raspberry Pi.
 
-  ![Example](https://res.cloudinary.com/metricio/image/upload/v1508687267/metricio_yxmmxo.gif)
+  ![Example](https://res.cloudinary.com/metricio/image/upload/v1510160088/demo_qvrjcv.gif)
